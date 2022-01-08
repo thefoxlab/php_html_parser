@@ -61,12 +61,11 @@ WalkUL( $DOM->find( "ul", 0 ), $ARR );
 function assign_val($ARR,$parent=0){
     foreach ($ARR as $key=>$val){
         
-        //echo "<br/> PARENT = ".$parent." ID = ".$key." NAME = ".$val['name']." DESC = ".$val['desc']." <br/> <br/>";
+        echo "<br/> PARENT = ".$parent." ID = ".$key." NAME = ".$val['name']." DESC = ".$val['desc']." <br/> <br/>";
         
         $t_v = $parent ? $parent : "NULL";
         
         echo "<br/>";
-        echo "INSERT INTO `learning_framework` (`learning_framework_id`,`name`, `description`, `parent_id`, `status`, `created_time`, `updated_time`, `created_by_admin_id`, `updated_by_admin_id`) VALUES ('".$key."', '".$val['name']."', '".$val['desc']."', $t_v, '1', now(), NULL, '1', NULL);";
         
         if(isset($val['list']))
         {
